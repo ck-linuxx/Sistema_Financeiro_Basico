@@ -17,7 +17,11 @@ export const TableItem = ({ item }: BananaProps) => {
                 </Style.Category>
             </Style.TableColumn>
             <Style.TableColumn>{item.title}</Style.TableColumn>
-            <Style.TableColumn>R$ {item.value}</Style.TableColumn>
+            <Style.TableColumn>
+                <Style.Value color={categories[item.category].expense ? "red" : "green"}>
+                    R$ {item.value}
+                </Style.Value>
+            </Style.TableColumn>
         </Style.TableLine>
     )
 }
